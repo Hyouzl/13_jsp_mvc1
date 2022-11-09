@@ -39,11 +39,11 @@
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			// DB 연결 정보 > "jdbc:mysql://DB서버주소:프로토콜번호/DB명?시간동기화"
-			String url = "jdbc:mysql://localhost:3306/login_ex?serverTimezone=UTC";
+			String url 		= "jdbc:mysql://localhost:3306/login_ex?serverTimezone=UTC";
 			// DB 연결 계정
-			String user    = "root";
+			String user    	= "root";
 			// DB 연결 비밀번호
-			String password  = "root";
+			String password = "root";
 			
 			
 			// 데이터베이스 연동
@@ -68,10 +68,7 @@
 			pstmt.setString(index , value);  // 문자열 타입 데이터 적용 메서드
 			pstmt.setDate(index , value);  	 // 날짜 타입 데이터 적용 메서드
 
-			*/
-				
-			
-			
+			*/	
 			
 			//선처리문 쿼리 작성
 			String sql = "INSERT INTO MEMBER VALUES(?,?,?,NOW())";
@@ -89,7 +86,6 @@
 			// 쿼리문 실행
 			pstmt.executeUpdate();
 			
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -103,6 +99,13 @@
 		
 	
 	%>
+	
+	
+	<script>
+		alert("회원가입 되었습니다.");
+		location.href="00_main.jsp"; // 해당 url로 페이지를 이동한다.
+	</script>
+	
 	
 
 	
