@@ -17,23 +17,19 @@
 	%>
 		<h1>JUST DO IT</h1>
 		<p><a href="01_insert.jsp">Join!</a></p>
-		<p>Login!</p>	
+		<p><a href="03_login.jsp">Login!</a></p>	
 	<%
 		}
 		else {
 	%>
 		<h1>Welcom! <%=id %></h1>
-		<p>Logout!</p>
-		<p>Delete!</p>
-		<p>Update!</p>
+		<p><a href="05_logout.jsp">Logout!</a></p>
+		<p><a href="06_delete.jsp">Delete!</a></p>
+		<p><a href="">Update!</a></p>
 	<%
 		}
 	%>
 
-	<form method="">
-	
-	
-	</form>
 
 </body>
 </html>
