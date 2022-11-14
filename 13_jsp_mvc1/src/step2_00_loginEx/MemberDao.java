@@ -86,6 +86,8 @@ public class MemberDao {
 	}
 	
 	
+	
+	//LoginDao
 	public boolean login (String id, String pw) {
 		
 		boolean isValidMember = false;
@@ -110,7 +112,8 @@ public class MemberDao {
 		
 		return isValidMember;
 	}
-
+	
+	//DeleteDao
 	public boolean deleteMember(MemberDto memberDto) {
 		
 		boolean isDelete = false; 
@@ -141,6 +144,38 @@ public class MemberDao {
 		}
 		
 		return isDelete;
+		
+	}
+	
+	//UpdateDao
+	public boolean updateMember(MemberDto memberDto) {
+		
+		boolean isUpdate = true;
+		
+		try {
+		getConnection();
+		
+		pstmt = conn.prepareStatement("SELECT * FROM MEMBER WHERE ID = ? AND PASSWD = ?");
+		
+		pstmt.setString(1, memberDto.getId());
+		pstmt.setString(2, memberDto.getPasswd());
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			
+			pstmt = conn.prepareStatement("UPDATE MEMBER SET NAME  = ? AND WHERE ID =?");
+			pstmt.setString(1, memberDto.getName());
+			pstmt.setString(2, memberDto.getId());
+			pstmt.executeUpdate();
+			isUpdate = true;
+		}
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return isUpdate;
 		
 	}
 	
