@@ -1,5 +1,5 @@
-<%@page import="step4_00_boardEx.BoardAdvanceDto"%>
 <%@page import="step4_00_boardEx.BoardAdvanceDao"%>
+<%@page import="step4_00_boardEx.BoardAdvanceDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
